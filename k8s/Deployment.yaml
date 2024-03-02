@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: swathi-app
+spec:
+  replicas: 1  # Adjust the number of replicas as needed
+  selector:
+    matchLabels:
+      app: swathi-app
+  template:
+    metadata:
+      labels:
+        app: swathi-app
+    spec:
+      containers:
+        - name: swathi-app
+          image: swathisrik/swathi-app:latest
+          ports:
+            - containerPort: 80
